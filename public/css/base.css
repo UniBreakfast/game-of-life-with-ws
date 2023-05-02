@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+canvas {
+  aspect-ratio: 1/1;
+  align-self: center;
+}
+
+input {
+  border: 1px solid #666;
+}
+
+@media (orientation: portrait) {
+  body {
+    flex-direction: column;
+  }
+}

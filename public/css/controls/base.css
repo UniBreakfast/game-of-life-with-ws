@@ -1,0 +1,24 @@
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+@media (orientation: portrait) {
+  #controls {
+    height: 60px;
+  }
+}
+
+/* landscape */
+@media not (orientation: portrait) {
+  #controls {
+    width: 200px;
+    flex-direction: column;
+  }
+
+  #controls input {
+    width: 100%;
+  }
+}
