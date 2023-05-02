@@ -1,11 +1,23 @@
-export { updateBoardSize }
+export { updateSize }
 
-function updateBoardSize() {
+function updateSize() {
   const portrait = innerWidth < innerHeight
-  
+
   if (portrait) {
-    board.width = board.height = Math.min(innerWidth, innerHeight - controls.offsetHeight)
+    this.width = this.height = canvas.width = canvas.height =
+      Math.min(innerWidth, innerHeight - controls.offsetHeight)
   } else {
-    board.width = board.height = Math.min(innerWidth - controls.offsetWidth, innerHeight)
+    this.width = this.height = canvas.width = canvas.height =
+      Math.min(innerWidth - controls.offsetWidth, innerHeight)
   }
+
+  this.cellSize = this.width / this.rowCount
+
+  this.ctx.fillStyle = this.cellColor
+  this.ctx.strokeStyle = this.lineColor
+  this.ctx.lineWidth = this.cellSize / 30
+
+  this.render()
 }
+
+import { canvas } from '../elements.js'

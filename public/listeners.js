@@ -1,7 +1,7 @@
 export { assignListeners }
 
 function assignListeners() {
-  window.onresize = updateBoardSize
+  window.onresize = () => ui.board.updateSize()
 }
 
-import { updateBoardSize } from './ui/board/size.js'
+import { ui } from './ui/ui.js'
